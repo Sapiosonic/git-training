@@ -86,20 +86,19 @@ GIT PROVIDES:
 
 THERE ARE THREE LEVELS OF CONFIGURATION IN GIT:
 
-###  -- SYSTEM LEVEL
+### --SYSTEM LEVEL
 
 - IT IS THE TOP MOST LEVEL, IT IS APPLICABLE TO EVERYONE WHO USES GIT ON THE SYSTEM WHERE GIT IS INSTALLED 
 
 - THE SETTINGS ARE DEFINED USING THE COMMAND: 'git config --system' which is saved to: /etc/gitconfig
 
-### -- GLOBAL
+### --GLOBAL
 
 - IT REFERS TO USERS SETTINGS IN ALL REPOSITORIES, THE SETTINGS ARE DEFINED USING 'git config --global' and are saved to ~/.gitconfig (on windows it would be Users/...)
 
 ### --LOCAL
 
 - It refers to the user in the repository level. The settings are defined using 'git config --local' (or just 'git config') and are saved to .git/config
-
 
 
 - All the files follow the same pattern independently of the level 
@@ -139,10 +138,45 @@ To check the configuration level, execute: $ git config --global user.name
 
 These configurations are  stored in the .gitconfig file in the user directory and defines all global configurations
 
+## LESSON 2 - GETTING STARTED WITH GIT
+
+### STEPS TP CREATE A GIT REPOSITORY:
+
+CREATE AN EMPTY DIRECTORY
+
+- cpmmand: $$ mkdir <directory-name></directory-name>
+
+CONVERT THE DIRECTORY INTO REPOSITORY
+
+- commandd: $ git init
+
+RUN GIT STATUS
+
+- command: $ git status
+
+- NOTE!!! $ git init command creates a hidden directory that stores all the metadata required for it to function.
+
+## GIT WORKOFLOW
+
+### GIT'S THREE STAGE WORKFLOW
+
+- GIT MAINTAINS THREE SNAPSHOTS OF A FILE IN SEPARATE DIRECTORIES
+
+1. WORKING DIRECTORY: THE FILES ADDED TO THIS DIRECTORY ARE UNTRACKED. IN ORDER TO TRACK THESE FILES YOU SHOULD MOVE THE FILES TO AN STAGING AREA BY USING THE  $ git add COMMAND.
+
+2. THESE FILES ARE NOW STORED IN  .git/index file LATER THIS FILES ARE COMMITED TO THE LOCAL REPOSITORY USING THE $ git commit COMMAND
+
+- WHILE COMMITTING, IT IS IMPORTANT TO ADD A MESSAGE STRING USING THE -m FLAG. IF MISSED, A DEFAULT EDITOR OPENS ASKING FOR COMMENTS.
+
+## MANAGING AND VIEWING CHANGES
+
+- TO MODIFY A FINLE IN GIT -> UPDATE -> ADD -> COMMIT
+
+$ git log -> view the changes in a file  1. commit ID
+                                         2. author
+                                         3. date
+                                         4. commit message
 
 
-
-
-
-
+TO RESTRICT THE OUTPUT TO ONE-LINE, EXECUTE: $ git log --oneliner THIS WILL DISPLAY THE INFORMATION IN A SINGLE LINE
 
